@@ -9,11 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var searchViewController: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+        
+        searchViewController.text = "검색"
+        
+    
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) 
+    navigationItem.leftBarButtonItem?.tintColor = .black
+    
+    
+}
 
+@objc
+    func closeButtonClicked() {
+  
+    dismiss(animated: true)
+    
+  
+    
+}
 
 }
 
