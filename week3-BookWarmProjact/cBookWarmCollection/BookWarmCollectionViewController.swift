@@ -10,10 +10,13 @@ import UIKit
 
 class BookWarmCollectionViewController: UICollectionViewController {
 
+    @IBOutlet var searchButton: UIBarButtonItem!
     let bookWarmArray = BookWarmArray()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchButton.image = UIImage(systemName: "magnifyingglass")
+         
         let nib = UINib(nibName: BookWarmCollectionViewCell.bookWarmIdentifire, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookWarmCollectionViewCell.bookWarmIdentifire)
         

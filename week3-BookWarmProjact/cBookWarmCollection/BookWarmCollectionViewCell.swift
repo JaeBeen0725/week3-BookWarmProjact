@@ -16,7 +16,8 @@ class BookWarmCollectionViewCell: UICollectionViewCell {
     
     
     func bookWarm(row: BookWarmValue) {
-        backgroundColor = .brown
+        var color: [UIColor] = [.red, .blue, .purple, .brown, .darkGray]
+        backgroundColor = color.randomElement()
         layer.cornerRadius = 15
         
        layer.shadowColor = UIColor.black.cgColor
