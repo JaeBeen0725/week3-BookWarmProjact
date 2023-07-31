@@ -15,6 +15,15 @@ class BookWarmTableViewController: UITableViewController {
         super.viewDidLoad()
         let nib = UINib(nibName: BookWarmTableViewCell.bookWarmTableViewCellIdentiFire, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: BookWarmTableViewCell.bookWarmTableViewCellIdentiFire)
+        
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backButtonClick))
+        
+    }
+    
+    @objc
+    func backButtonClick() {
+        dismiss(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

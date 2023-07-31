@@ -16,12 +16,13 @@ class ViewController: UIViewController {
         searchViewController.text = "검색"
         
     
-    navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) 
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) 
     navigationItem.leftBarButtonItem?.tintColor = .black
     
     
 }
 
+    
 @objc
     func closeButtonClicked() {
   

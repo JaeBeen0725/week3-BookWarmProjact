@@ -11,11 +11,16 @@ import UIKit
 class BookWarmCollectionViewController: UICollectionViewController {
 
     @IBOutlet var searchButton: UIBarButtonItem!
+    
+    @IBOutlet var tableViewButton: UIBarButtonItem!
+    
     let bookWarmArray = BookWarmArray()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchButton.image = UIImage(systemName: "magnifyingglass")
+        
+        tableViewButton.image = UIImage(systemName: "book.closed")
          
         let nib = UINib(nibName: BookWarmCollectionViewCell.bookWarmIdentifire, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookWarmCollectionViewCell.bookWarmIdentifire)
@@ -91,6 +96,23 @@ class BookWarmCollectionViewController: UICollectionViewController {
         present(nav, animated: true)
         
     }
+    
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
+        let searchTableviewStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let searchTableViewController = searchTableviewStoryboard.instantiateViewController(identifier: "BookWarmTableViewController") as? BookWarmTableViewController else {
+            return showAlert()
+        }
+        
+        let nav = UINavigationController(rootViewController: searchTableViewController)
+        
+        nav.modalPresentationStyle = .overFullScreen
+        
+        present(nav, animated: true)
+        
+        
+    }
+    
     
     
     
