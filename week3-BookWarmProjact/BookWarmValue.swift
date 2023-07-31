@@ -13,3 +13,8 @@ struct BookWarmValue {
     var image: UIImage
     var date: String
 }
+
+
+struct BookWarmTableViewControllerValue {
+    var title: String
+}
