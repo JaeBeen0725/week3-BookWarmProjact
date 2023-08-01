@@ -12,6 +12,8 @@ struct BookWarmValue {
     var title: String
     var image: UIImage
     var date: String
+    var like: Bool
+    var color: UIColor
 }
 
 

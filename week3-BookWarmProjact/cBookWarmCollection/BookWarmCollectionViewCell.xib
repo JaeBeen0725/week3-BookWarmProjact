@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xb9-4T-JW5">
-                        <rect key="frame" x="0.0" y="21" width="209" height="91"/>
+                        <rect key="frame" x="52" y="21" width="157" height="91"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="91" id="gQe-Sd-5xG"/>
                         </constraints>
@@ -38,19 +38,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xQ-3x-nR9">
+                        <rect key="frame" x="4" y="44.666666666666657" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="GtY-L7-9Gn"/>
+                            <constraint firstAttribute="height" constant="44" id="jVh-rn-StV"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Xb9-4T-JW5" secondAttribute="trailing" id="5Bb-qB-TAC"/>
                 <constraint firstItem="4lf-WH-8kT" firstAttribute="top" secondItem="Xb9-4T-JW5" secondAttribute="bottom" id="E22-ec-WeK"/>
+                <constraint firstItem="6xQ-3x-nR9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="Ncm-Cq-vjw"/>
                 <constraint firstItem="Xb9-4T-JW5" firstAttribute="top" secondItem="cer-NQ-e8j" secondAttribute="bottom" id="O0Y-hr-Bel"/>
                 <constraint firstAttribute="trailing" secondItem="cer-NQ-e8j" secondAttribute="trailing" id="OOH-d2-HIH"/>
                 <constraint firstItem="4lf-WH-8kT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UOJ-ev-6aK"/>
                 <constraint firstAttribute="trailing" secondItem="4lf-WH-8kT" secondAttribute="trailing" id="Y8f-Wx-16f"/>
-                <constraint firstItem="Xb9-4T-JW5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZmU-m3-cDy"/>
                 <constraint firstItem="cer-NQ-e8j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bTm-Lu-sEJ"/>
+                <constraint firstItem="6xQ-3x-nR9" firstAttribute="top" secondItem="cer-NQ-e8j" secondAttribute="bottom" constant="23.670000000000002" id="cMG-Od-9Z2"/>
                 <constraint firstItem="cer-NQ-e8j" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gW0-Ps-INf"/>
+                <constraint firstItem="Xb9-4T-JW5" firstAttribute="leading" secondItem="6xQ-3x-nR9" secondAttribute="trailing" constant="4" id="mlY-P5-Sxo"/>
                 <constraint firstItem="4lf-WH-8kT" firstAttribute="height" secondItem="cer-NQ-e8j" secondAttribute="height" id="ov9-uY-Sjc"/>
             </constraints>
             <size key="customSize" width="209" height="133"/>
@@ -58,6 +69,7 @@
                 <outlet property="bookDateLabel" destination="4lf-WH-8kT" id="UOG-LC-2rQ"/>
                 <outlet property="bookImageView" destination="Xb9-4T-JW5" id="n5j-7Z-C2m"/>
                 <outlet property="bookTitleLabel" destination="cer-NQ-e8j" id="hzS-tt-2X5"/>
+                <outlet property="likeButton" destination="6xQ-3x-nR9" id="tg4-u4-aK8"/>
             </connections>
             <point key="canvasLocation" x="196.18320610687022" y="17.95774647887324"/>
         </collectionViewCell>

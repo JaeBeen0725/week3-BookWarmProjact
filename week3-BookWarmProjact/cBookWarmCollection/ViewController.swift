@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var searchViewController: UILabel!
+   
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchViewController.text = "검색"
+      
         
     
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) 
