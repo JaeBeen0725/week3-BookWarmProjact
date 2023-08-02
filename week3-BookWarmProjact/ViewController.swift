@@ -61,13 +61,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookAroundCollectionViewCell", for: indexPath) as! LookAroundCollectionViewCell
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookAroundCollectionViewCell", for: indexPath) as! LookAroundCollectionViewCell
         
         cell.backgroundColor = .lightGray
         cell.lookAroundCollectionImage.image = bookwarmarray.bookImage[indexPath.row]
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+       let targetstoryboard = UIStoryboard(name: "Main", bundle: nil)
+       guard targetstoryboard.instantiateViewController(identifier: "BooWarmDetailViewController") is BooWarmDetailViewController else {
+            
+           return showAlert()
+       }
+       
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let lookAroundcollectionView = storyboard.instantiateViewController(identifier: "BooWarmDetailViewController") as! BooWarmDetailViewController
+       
+        lookAroundcollectionView.bookImage1 = bookwarmarray.bookImage[indexPath.row]
+        lookAroundcollectionView.bookDate1 = bookwarmarray.bookDate[indexPath.row]
+        lookAroundcollectionView.booktitle1 = bookwarmarray.bookTitle[indexPath.row]
+       
+       
+       navigationController?.pushViewController(lookAroundcollectionView, animated: true)
+       
+   }
     
     
     
@@ -88,7 +108,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let targetstoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard targetstoryboard.instantiateViewController(identifier: "BooWarmDetailViewController") is BooWarmDetailViewController else {
+             
+            return showAlert()
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let lookAroundTableView = storyboard.instantiateViewController(identifier: "BooWarmDetailViewController") as! BooWarmDetailViewController
+        
+        lookAroundTableView.bookImage1 = bookwarmarray.bookImage[indexPath.row]
+        lookAroundTableView.bookDate1 = bookwarmarray.bookDate[indexPath.row]
+        lookAroundTableView.booktitle1 = bookwarmarray.bookTitle[indexPath.row]
+        
+        
+        navigationController?.pushViewController(lookAroundTableView, animated: true)
+    }
     
     
     
