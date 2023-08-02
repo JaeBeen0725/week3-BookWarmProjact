@@ -14,7 +14,7 @@ class BookWarmTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let nib = UINib(nibName: BookWarmTableViewCell.bookWarmTableViewCellIdentiFire, bundle: nil)
+        let nib = UINib(nibName:BookWarmTableViewCell.bookWarmTableViewCellIdentiFire, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: BookWarmTableViewCell.bookWarmTableViewCellIdentiFire)
         
         

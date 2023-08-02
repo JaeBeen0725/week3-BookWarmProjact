@@ -31,7 +31,7 @@ class BookWarmCollectionViewCell: UICollectionViewCell {
         bookDateLabel.text = row.date
         bookImageView.image = row.image
         bookImageView.contentMode = .scaleToFill
-        bookTitleLabel.text = row.title
+       bookTitleLabel.text = row.title
         
         if row.like == false {
             likeButton.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
