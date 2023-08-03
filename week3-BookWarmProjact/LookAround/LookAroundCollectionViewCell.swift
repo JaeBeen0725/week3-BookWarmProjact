@@ -8,7 +8,7 @@
 import UIKit
 
 class LookAroundCollectionViewCell: UICollectionViewCell {
-
+    static let collectionViewIdentifire = "LookAroundCollectionViewCell"
     @IBOutlet var lookAroundCollectionImage: UIImageView!
     
     override func awakeFromNib() {

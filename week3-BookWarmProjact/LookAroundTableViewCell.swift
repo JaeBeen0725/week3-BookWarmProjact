@@ -8,7 +8,7 @@
 import UIKit
 
 class LookAroundTableViewCell: UITableViewCell {
-
+    static let lookAroundTableViewIdentifire = "LookAroundTableViewCell"
 
     @IBOutlet var lookAroundTableImageView: UIImageView!
     @IBOutlet var lookAroundTableTitleLabel: UILabel!

@@ -10,7 +10,7 @@ import UIKit
 
 extension UICollectionViewController {
     
-    func showAlert() {
+    func showAlert1() {
         let alert = UIAlertController(title: "오류", message: "관리자에게 문의하세요", preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
@@ -21,7 +21,7 @@ extension UICollectionViewController {
 
 extension UITableViewController {
     
-    func showAlertt() {
+    func showAlert2() {
         let alert = UIAlertController(title: "오류", message: "관리자에게 문의하세요", preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
@@ -34,7 +34,7 @@ extension UITableViewController {
 
 extension ViewController {
     
-    func showAlert() {
+    func showAlert3() {
         let alert = UIAlertController(title: "오류", message: "관리자에게 문의하세요", preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
@@ -43,3 +43,4 @@ extension ViewController {
     
    
 }
+

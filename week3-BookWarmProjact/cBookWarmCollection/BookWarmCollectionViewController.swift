@@ -73,7 +73,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         let targetstoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard targetstoryboard.instantiateViewController(identifier: "BooWarmDetailViewController") is BooWarmDetailViewController else {
              
-            return showAlert()
+            return showAlert1()
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -95,7 +95,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         
         guard let searchViewcontroller = searchstoryboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
             
-            return showAlert()
+            return showAlert1()
         }
         
         let nav = UINavigationController(rootViewController: searchViewcontroller)
@@ -110,7 +110,7 @@ class BookWarmCollectionViewController: UICollectionViewController {
         let searchTableviewStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let searchTableViewController = searchTableviewStoryboard.instantiateViewController(identifier: "BookWarmTableViewController") as? BookWarmTableViewController else {
-            return showAlert()
+            return showAlert1()
         }
         
         let nav = UINavigationController(rootViewController: searchTableViewController)

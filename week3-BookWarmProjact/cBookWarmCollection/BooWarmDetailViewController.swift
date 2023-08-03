@@ -8,7 +8,7 @@
 import UIKit
 
 class BooWarmDetailViewController: UIViewController {
-
+        static let bookWarmDetailViewIdentifire = "BooWarmDetailViewController"
     @IBOutlet var bookImage: UIImageView!
     @IBOutlet var bookTitleLabel: UILabel!
     @IBOutlet var bookDate: UILabel!

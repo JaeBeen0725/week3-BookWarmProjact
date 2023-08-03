@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lookAroundTableView.rowHeight = 200
+        lookAroundTableView.rowHeight = 190
         
         lookAroundCollectionView.delegate = self
         lookAroundCollectionView.dataSource = self
@@ -26,11 +26,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         lookAroundTableView.delegate = self
         lookAroundTableView.dataSource = self
         
-        let cvnib = UINib(nibName: "LookAroundCollectionViewCell", bundle: nil)
-        lookAroundCollectionView.register(cvnib, forCellWithReuseIdentifier: "LookAroundCollectionViewCell")
+        let cvnib = UINib(nibName: LookAroundCollectionViewCell.collectionViewIdentifire, bundle: nil)
+        lookAroundCollectionView.register(cvnib, forCellWithReuseIdentifier: LookAroundCollectionViewCell.collectionViewIdentifire)
         
-        let tv = UINib(nibName: "LookAroundTableViewCell", bundle: nil)
-        lookAroundTableView.register(tv, forCellReuseIdentifier: "LookAroundTableViewCell")
+        let tv = UINib(nibName: LookAroundTableViewCell.lookAroundTableViewIdentifire, bundle: nil)
+        lookAroundTableView.register(tv, forCellReuseIdentifier: LookAroundTableViewCell.lookAroundTableViewIdentifire)
         
         
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked)) 
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookAroundCollectionViewCell", for: indexPath) as! LookAroundCollectionViewCell
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LookAroundCollectionViewCell.collectionViewIdentifire, for: indexPath) as! LookAroundCollectionViewCell
         
         cell.backgroundColor = .lightGray
         cell.lookAroundCollectionImage.image = bookwarmarray.bookImage[indexPath.row]
@@ -72,20 +72,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
        let targetstoryboard = UIStoryboard(name: "Main", bundle: nil)
-       guard targetstoryboard.instantiateViewController(identifier: "BooWarmDetailViewController") is BooWarmDetailViewController else {
+        guard targetstoryboard.instantiateViewController(identifier:  BooWarmDetailViewController.bookWarmDetailViewIdentifire) is BooWarmDetailViewController else {
             
-           return showAlert()
+           return showAlert3()
        }
        
        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       let lookAroundcollectionView = storyboard.instantiateViewController(identifier: "BooWarmDetailViewController") as! BooWarmDetailViewController
+       let lookAroundcollectionView = storyboard.instantiateViewController(identifier: BooWarmDetailViewController.bookWarmDetailViewIdentifire) as! BooWarmDetailViewController
        
         lookAroundcollectionView.bookImage1 = bookwarmarray.bookImage[indexPath.row]
         lookAroundcollectionView.bookDate1 = bookwarmarray.bookDate[indexPath.row]
         lookAroundcollectionView.booktitle1 = bookwarmarray.bookTitle[indexPath.row]
        
-       
-       navigationController?.pushViewController(lookAroundcollectionView, animated: true)
+        present(lookAroundcollectionView, animated: true)
+      // navigationController?.pushViewController(lookAroundcollectionView, animated: true)
        
    }
     
@@ -97,7 +97,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LookAroundTableViewCell", for: indexPath) as! LookAroundTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LookAroundTableViewCell.lookAroundTableViewIdentifire, for: indexPath) as? LookAroundTableViewCell else {
+           // return showAlert3()
+           showAlert3()
+            return UITableViewCell()
+        }
         
         cell.lookAroundTableDateLabel.text = bookwarmarray.bookDate[indexPath.row]
         cell.lookAroundTableImageView.image = bookwarmarray.bookImage[indexPath.row]
@@ -108,16 +112,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> Void {
         
         let targetstoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard targetstoryboard.instantiateViewController(identifier: "BooWarmDetailViewController") is BooWarmDetailViewController else {
+        guard targetstoryboard.instantiateViewController(identifier: BooWarmDetailViewController.bookWarmDetailViewIdentifire) is BooWarmDetailViewController else {
              
-            return showAlert()
+            return showAlert3()
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let lookAroundTableView = storyboard.instantiateViewController(identifier: "BooWarmDetailViewController") as! BooWarmDetailViewController
+        let lookAroundTableView = storyboard.instantiateViewController(identifier: BooWarmDetailViewController.bookWarmDetailViewIdentifire) as! BooWarmDetailViewController
         
         lookAroundTableView.bookImage1 = bookwarmarray.bookImage[indexPath.row]
         lookAroundTableView.bookDate1 = bookwarmarray.bookDate[indexPath.row]
